@@ -12,6 +12,10 @@ export const AppRouter = () => {
     <PublicRouter>
       <Login/>
     </PublicRouter>}/>
+    <Route path="register" element={
+    <PublicRouter>
+      <Register/>
+    </PublicRouter>}/>
     <Route path="/*" element={<PrivateRouterContainer/>}/>
    </Routes>      
    </>

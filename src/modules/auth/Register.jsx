@@ -43,19 +43,19 @@ const navigate = useNavigate();
   };
   return (
     <div
-      className={`flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url("../public/assets/images/galaxia.jpeg")]`}
+      className={`flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url("../public/assets/images/morado.png")]`}
     >
-      <div className="rounded-xl bg-yellow-400 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+      <div className="rounded-xl bg-blue-200 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
         <div className="text-white">
           <div className="mb-8 flex flex-col items-center">
             <img
-              src="https://www.logo.wine/a/logo/Star_Wars/Star_Wars-Logo.wine.svg"
+              src="https://www.logo.wine/a/logo/GitHub/GitHub-Logo.wine.svg"
               width="150"
               alt=""
               srcSet=""
             />
-            <h1 className="mb-2 text-2xl">STAR WARS</h1>
-            <span className="text-gray-300">Inicio de sesión</span>
+            <h1 className="mb-2 text-2xl">GITHUB</h1>
+            <span className="text-gray-300">Registrar</span>
           </div>
 
           <form
@@ -71,8 +71,8 @@ const navigate = useNavigate();
               name="email"
               regex={/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/}
               messageA="El campo debe cumplir con la nomenclatura de un correo"
-              designInput="block rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-              placeHolder="id@email.com"
+              designInput="block rounded-3xl border-none bg-blue-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+              placeHolder="samantha@email.com"
               errors={errors}
             />
 
@@ -83,7 +83,7 @@ const navigate = useNavigate();
               register={register}
               name="password"
               messageA="El campo debe cumplir con la nomenclatura de un correo"
-              designInput="block rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+              designInput="block rounded-3xl border-none bg-blue-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
               placeHolder="********"
               typeInput="Password"
               errors={errors}
@@ -92,7 +92,7 @@ const navigate = useNavigate();
             <InputButton
               dimension="mt-8 flex justify-center text-lg text-black"
               typeButton="submit"
-              designButton="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+              designButton="rounded-3xl bg-blue-500 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
             />
           </form>
         </div>
