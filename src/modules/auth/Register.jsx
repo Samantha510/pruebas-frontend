@@ -1,41 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Input, InputButton } from "../../UI";
-import { apiClient } from "../../api/ApiClient";
-import {
-  getRol,
-  getToken,
-  setRolLocalStorage,
-  setTokenLocalStorage,
-} from "../../utils/manajer";
-import { useNavigate } from "react-router-dom";
 
+import { useForm } from "react-hook-form";
+import { Input, InputButton, InputSelectOption } from "../../UI";
+import { apiClient } from "../../api/ApiClient";
+
+
+let roles = [{id_rol:1,rol:"administrador"}, {id_rol:2,rol:"usuario"},{id_rol:3,rol:"superadmin"}]
 export const Register = () => {
-  const [token,setToken]= useState('');
-  const [rol,setRol]= useState('');
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-const navigate = useNavigate();
-  
-  useEffect(() => {
-    if(token !== '' && rol !== ''){
-      navigate('/');
-    }
-     // eslint-disable-next-line
-  }, [token,rol])
-  
 
   const registrar = async (data1) => {
     await apiClient
       .post(`/usuarios`, data1)
       .then((response) => {
-        setTokenLocalStorage(response.data.token);
-        setRolLocalStorage(response.data.rol);
-        setToken(getToken());
-        setRol(getRol());
+        console.log(data1);
       })
       .catch((error) => {
         console.log(error);
@@ -43,9 +24,9 @@ const navigate = useNavigate();
   };
   return (
     <div
-      className={`flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url("../public/assets/images/morado.png")]`}
+      className={`flex h-max w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url("../public/assets/images/morado.png")]`}
     >
-      <div className="rounded-xl bg-blue-200 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+      <div className="rounded-xl bg-blue-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
         <div className="text-white">
           <div className="mb-8 flex flex-col items-center">
             <img
@@ -60,7 +41,7 @@ const navigate = useNavigate();
 
           <form
             onSubmit={handleSubmit((data) => {
-                registrar(data);
+              registrar(data);
             })}
           >
             <Input
@@ -71,9 +52,10 @@ const navigate = useNavigate();
               name="email"
               regex={/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/}
               messageA="El campo debe cumplir con la nomenclatura de un correo"
-              designInput="block rounded-3xl border-none bg-blue-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+              designInput="block rounded-3xl border-none bg-blue-800 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
               placeHolder="samantha@email.com"
               errors={errors}
+              nameLabel="Correo electronico"
             />
 
             <Input
@@ -83,16 +65,31 @@ const navigate = useNavigate();
               register={register}
               name="password"
               messageA="El campo debe cumplir con la nomenclatura de un correo"
-              designInput="block rounded-3xl border-none bg-blue-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+              designInput="block rounded-3xl border-none bg-blue-900 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
               placeHolder="********"
               typeInput="Password"
               errors={errors}
+              nameLabel="Contraseña"
+            />
+
+            <InputSelectOption
+              dimensionA="mb-4 text-lg"
+              dimensionB="flex justify-center"
+              dimensionC="flex flex-wrap justify-center"
+              register={register}
+              name="rol"
+              designInput="block rounded-3xl border-none bg-blue-800 bg-opacity-50 px-12 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+              errors={errors}
+              nameLabel="Rol"
+              array={roles}
+              valueOption={'id_rol'}
+              nameOption={'rol'}
             />
 
             <InputButton
               dimension="mt-8 flex justify-center text-lg text-black"
               typeButton="submit"
-              designButton="rounded-3xl bg-blue-500 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+              designButton="rounded-3xl bg-blue-700 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
             />
           </form>
         </div>

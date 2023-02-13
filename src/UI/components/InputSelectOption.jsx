@@ -1,56 +1,54 @@
 import React from "react";
+import { Register } from "../../modules/auth/Register";
 
-export const Input = ({
+export const InputSelectOption = ({
+  nameLabel,
   dimensionA,
   dimensionB,
   dimensionC,
   register,
   name,
-  regex,
-  messageA,
-  req = true,
+  req=true,
   designInput,
-  typeInput = "text",
-  placeHolder,
   errors,
-  nameLabel
+  array,
+  valueOption,
+  nameOption
 }) => {
   return (
     <div className={dimensionA}>
-      
-        <label>{nameLabel}</label>
-      
+      <label>{nameLabel}</label>
+
       <div className={dimensionB}>
-        <input
+        <select
           {...register(name, {
-            pattern: {
-              value: regex,
-              message: messageA,
-            },
             required: {
               value: req,
               message: "El campo es obligatorio",
             },
           })}
           className={designInput}
-          type={typeInput}
           name={name}
-          placeholder={placeHolder}
-        />
+        >
+          <option value="">
+            --ninguna opcion--
+          </option>
+          {
+            array.map((item)=>(
+              <option key={item[valueOption]} value={item[valueOption]}>
+                {item[nameOption]}
+              </option>
+            ))
+          }
+        </select>
+
+        
       </div>
       <div className={dimensionC}>
         {errors[name] && (
           <span className="text-red-500">{errors[name].message}</span>
         )}
       </div>
-    </div>
-  );
-};
-
-export const InputButton = ({ dimension, typeButton, designButton }) => {
-  return (
-    <div className={dimension}>
-      <input type={typeButton} className={designButton} />
     </div>
   );
 };

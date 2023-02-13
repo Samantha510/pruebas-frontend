@@ -3,10 +3,6 @@ import { getToken } from "../utils/manajer";
 
 export const PublicRouter = ({children}) => {
 
-  
-
-  
-
   return getToken()
   ? <Navigate to = '/'/>
   : children
