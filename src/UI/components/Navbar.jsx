@@ -66,7 +66,7 @@ export const Navbar = () => {
             <button className="bg-transparent text-gray-800  p-2 rounded border border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700">
               Sign in
             </button>
-            <button onClick={logoutSystem} className="bg-blue-600 text-gray-200  p-2 rounded  hover:bg-blue-500 hover:text-gray-100">
+            <button onClick={logoutSystem} className="bg-blue-700 text-white  p-2 rounded  hover:bg-blue-800 hover:text-gray-100">
               Cierre de Sesión
             </button>
           </div>

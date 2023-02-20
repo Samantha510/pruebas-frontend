@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Button } from "./Button";
+
 export const NotFound = () => {
   return (
     <div className="bg-gray-200 w-full px-16 md:px-0 h-screen flex items-center justify-center">
@@ -18,19 +20,23 @@ export const NotFound = () => {
           className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 mt-6 rounded transition duration-150"
           title="Return Home"
         > */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span>Return Home</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+        <Button
+              dimension="mt-8 flex justify-center text-lg text-black"
+              typeButton="submit"
+              designButton="rounded-3xl bg-blue-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+            />
         {/* </a> */}
       </div>
     </div>

@@ -47,10 +47,4 @@ export const Input = ({
   );
 };
 
-export const InputButton = ({ dimension, typeButton, designButton }) => {
-  return (
-    <div className={dimension}>
-      <input type={typeButton} className={designButton} />
-    </div>
-  );
-};
+

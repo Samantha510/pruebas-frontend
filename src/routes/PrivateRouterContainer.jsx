@@ -1,14 +1,19 @@
+
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Informacion, Menu, Register } from "../modules"
 import { Catalogo } from "../modules/users/Catalogo"
 import { Users } from "../modules/users/Users"
+
 import { PrivateRouter } from "./PrivateRouter"
 
 
 export const PrivateRouterContainer = () => {
   return (
+    
    <Routes>
+  
     <Route element = {<PrivateRouter rols = {[1,2]}/>}>
+   
       <Route path="/users" element={<Users/>}/>
       <Route path="/catalogo" element={<Catalogo/>}/>
     </Route>

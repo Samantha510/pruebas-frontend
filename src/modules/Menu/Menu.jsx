@@ -1,5 +1,6 @@
 import { Navbar } from "../../UI"
 
+
 export const Menu = () => {
   return (
     <div>

@@ -1,7 +1,10 @@
 import React from 'react'
+import { Navbar } from '../../UI'
 
 export const Informacion = () => {
   return (
-    <div>Informacion</div>
+    <div>
+      <Navbar/>
+      Informacion</div>
   )
 }
