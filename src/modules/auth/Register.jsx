@@ -101,7 +101,7 @@ export const Register = () => {
 
 
             <Button
-            onClick = {navigate('./users/Users.jsx')}
+            onClick = {navigate('./users/Users')}
               dimension="text-center mt-6"
               typeButton="submit"
               designButton="rounded-3xl bg-blue-300 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-blue-600"
